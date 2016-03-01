@@ -4,9 +4,11 @@ class ScopeGenerator < Rails::Generators::NamedBase
   def create_scope_file
     empty_directory 'app/scopes/'
     create_file "app/scopes/#{file_name}_scopes.rb", <<-FILE
+require 'scopes_rails/state_machine_scopes'
+
 module #{class_name}Scopes
   extend ActiveSupport::Concern
-  #include StateMachineScopes
+  include StateMachineScopes
 
   included do
   end
