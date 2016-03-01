@@ -10,8 +10,8 @@ module #{class_name}Scopes
   extend ActiveSupport::Concern
   include StateMachineScopes
 
-  included do
-  end
+  #included do
+  #end
 end
     FILE
 
