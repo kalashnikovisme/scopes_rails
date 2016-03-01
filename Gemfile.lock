@@ -106,3 +106,4 @@ PLATFORMS
 DEPENDENCIES
   scopes_rails!
   sqlite3
+  thor
