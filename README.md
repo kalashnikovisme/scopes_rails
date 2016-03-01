@@ -1,5 +1,9 @@
 # ScopesRails
 
+```
+gem install scopes_rails
+```
+Compatible with `Rails 4.x`
 
 Manage scopes in Rails.
 
