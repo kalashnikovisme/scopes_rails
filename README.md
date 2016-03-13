@@ -42,6 +42,7 @@ class User < ActiveRecord::Base
     
     # .etc
   end
+  
 end
 ```
 
@@ -91,3 +92,16 @@ end
 ```
 
 Remove `StateMachineScopes` from scopes file if you don't need it.
+
+
+Testing
+
+Add `ScopesRailsIncluding.initialize_scopes` in your test_helper
+
+Example on Minitest
+
+```ruby
+class ActiveSupport::TestCase
+  ScopesRailsIncluding.initialize_scopes
+end
+```
