@@ -9,11 +9,14 @@ require 'scopes_rails/state_machine/scopes'
 module #{class_name}Scopes
   include StateMachine::Scopes
 
-  included do
-  end
+  #included do
+  #end
 end
     FILE
 
     copy_file 'scopes_rails_initializer.rb', 'config/initializers/scopes_rails_initializer.rb'
+    empty_directory 'lib/middleware'
+    copy_file 'scopes_rails_middleware.rb', 'lib/middleware/scopes_rails_middleware.rb'
+    copy_file 'scopes_rails_including.rb', 'lib/middleware/scopes_rails_including.rb'
   end
 end

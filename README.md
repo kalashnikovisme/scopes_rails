@@ -17,15 +17,15 @@ class User < ActiveRecord::Base
     state :removed
     state :lost
     state :beaten
-    
+
     # .etc
   end
-  
+
   scope :active, -> { where state: :active }
   scope :removed, -> { where state: :removed }
   scope :lost, -> { where state: :lost }
   scope :beaten, -> { where state: :beaten }
-  
+
   # etc.
 end
 ```
@@ -39,9 +39,10 @@ class User < ActiveRecord::Base
     state :removed
     state :lost
     state :beaten
-    
+
     # .etc
   end
+
 end
 ```
 
@@ -97,4 +98,16 @@ List of scopes. You can get list of declared scopes in scopes file.
 ```ruby
 > User.scopes
 [:active, :removed, :lost, :beaten, :alive]
+```
+
+Testing
+
+Add `ScopesRailsIncluding.initialize_scopes` in your test_helper
+
+Example on Minitest
+
+```ruby
+class ActiveSupport::TestCase
+  ScopesRailsIncluding.initialize_scopes
+end
 ```
