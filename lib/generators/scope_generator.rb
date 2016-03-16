@@ -7,7 +7,6 @@ class ScopeGenerator < Rails::Generators::NamedBase
 require 'scopes_rails/state_machine_scopes'
 
 module #{class_name}Scopes
-  extend ActiveSupport::Concern
   include StateMachineScopes
 
   included do
