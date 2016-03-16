@@ -1,8 +1,10 @@
+require 'scopes_rails/state_machine/list'
+
 module StateMachine::Scopes
   extend ActiveSupport::Concern
 
   included do
-    List.states_list.each do |scope_name, query|
+    StateMachine::List.states_list(model_name.name.constantize).each do |scope_name, query|
       scope scope_name, query
     end
   end
