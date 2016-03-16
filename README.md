@@ -91,3 +91,10 @@ end
 ```
 
 Remove `StateMachineScopes` from scopes file if you don't need it.
+
+List of scopes. You can get list of declared scopes in scopes file.
+
+```ruby
+> User.scopes
+[:active, :removed, :lost, :beaten, :alive]
+```
