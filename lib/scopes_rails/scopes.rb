@@ -9,8 +9,8 @@ module ScopesRails
         added_scopes_list = []
         included_sector = false
         File.foreach("app/scopes/#{model_name.to_s.underscore}_scopes.rb") do |line|
-          included_sector = true if line == '  included do'
-          if included_sector && line.match?(/scope :[a-z0-9]*, .*/)
+          included_sector = true if line.include? 'included do'
+          if included_sector && line.match(/scope :[a-z0-9]*, .*/)
             added_scopes_list << line[/:[0-9a-z]*/][1..-1]
           end
         end
