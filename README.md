@@ -17,15 +17,15 @@ class User < ActiveRecord::Base
     state :removed
     state :lost
     state :beaten
-    
+
     # .etc
   end
-  
+
   scope :active, -> { where state: :active }
   scope :removed, -> { where state: :removed }
   scope :lost, -> { where state: :lost }
   scope :beaten, -> { where state: :beaten }
-  
+
   # etc.
 end
 ```
@@ -39,10 +39,10 @@ class User < ActiveRecord::Base
     state :removed
     state :lost
     state :beaten
-    
+
     # .etc
   end
-  
+
 end
 ```
 
@@ -93,6 +93,12 @@ end
 
 Remove `StateMachineScopes` from scopes file if you don't need it.
 
+List of scopes. You can get list of declared scopes in scopes file.
+
+```ruby
+> User.scopes
+[:active, :removed, :lost, :beaten, :alive]
+```
 
 Testing
 
